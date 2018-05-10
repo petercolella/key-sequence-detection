@@ -7,6 +7,24 @@
 </head>
 <body>
 <script>
+  const pressed = [];
+  const secretCode = 'puppies';
+
+  window.addEventListener('keyup', (e) => {
+    console.log(e.key);
+    pressed.push(e.key);
+    pressed.splice(-secretCode -1, pressed.length - secretCode.length);
+    console.log(pressed);
+    const pressedWord = pressed.join('');
+    console.log(pressedWord);
+    // if (secretCode === pressedWord) {
+    //   alert('Unlocked');
+    // }
+    if (pressed.join('').includes(secretCode)) {
+      console.log('Bingo!');
+      cornify_add();
+    }
+  })
 </script>
 </body>
 </html>
